@@ -48,12 +48,12 @@ export default {
     {
       id: 1,
       name: "Python",
-      rating: 60,
+      rating: 85,
     },
     {
       id: 2,
       name: "Php",
-      rating: 80,
+      rating: 96,
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ export default {
     {
       id: 4,
       name: "MysQl",
-      rating: 50,
+      rating: 70,
     },
   ],
 };
