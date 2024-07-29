@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PersonalDetail from './forms/PersonalDetail'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
+import Summary from './forms/Summary';
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]  = useState(1);
@@ -20,16 +21,17 @@ function FormSection() {
             onClick={() => setActiveFormIndex(activeFormIndex-1)}
           ><ArrowLeft /> </Button>}
           <Button 
+          disabled={!enableNext}
           className="flex gap-2" size="sm"
            onClick={() => setActiveFormIndex(activeFormIndex+1)}
            >Next <ArrowRight /></Button>
         </div>
       </div>
-      {/* Personal Details  */}
+ 
       {activeFormIndex == 1 ?<PersonalDetail enableNext={(v) => setEnableNext(v)} />:null}
-      
+      {activeFormIndex == 2 ?<Summary enableNext={(v) => setEnableNext(v)} />:null}   
 
-      {/* Summary Details  */}
+ 
 
       {/* Experience Details  */}
 
