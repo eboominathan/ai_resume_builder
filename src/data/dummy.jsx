@@ -1,74 +1,86 @@
-export default {
-  firstName: "John",
-  lastName: "Doe",
-  jobTitle: "Full Stack Developer",
-  address: "278 RK Nagar Peedampalli, Coimbatore ,India",
-  phone: "(+91) 9999999999",
-  email: "exampl@gmail.com",
-  themeColor: "#ff6666",
-  summary: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-  experience: [
-    {
-      id: 1,
-      title: "Junior Developer",
-      companyName: "Google",
-      city: "Coimbatore",
-      state: "TN",
-      country: "IND",
-      startDate: "Jan 2021",
-      endDate: "-",
-      workSummary: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-      currentlyWorking:true
-    },
-    {
-      id: 2,
-      title: "Senior Developer",
-      companyName: "Amazon",
-      city: "Coimbatore",
-      state: "TN",
-      country: "IND",
-      startDate: "Jan 2019",
-      endDate: "Dec 2020",
-      workSummary: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      currentlyWorking:false
-    },
+export default{
+  firstName:'James',
+  lastName:'Carter',
+  jobTitle:'full stack developer',
+  address:'525 N tryon Street, NC 28117',
+  phone:'(123)-456-7890',
+  email:'exmaple@gmail.com',
+  themeColor:"#ff6666",
+  summary:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  experience:[
+      {
+          id:1,
+          title:'Full Stack Developer',
+          companyName:'Amazon',
+          city:'New York',
+          state:'NY',
+          startDate:'Jan 2021',
+          endDate:'',
+          currentlyWorking:true,
+          workSummary:' Designed, developed, and maintained full-stack applications using React and Node.js.\n'+
+          '• Implemented responsive user interfaces with React, ensuring seamless user experiences across\n'+
+          'various devices and browsers.\n'+
+          '• Maintaining the React Native in-house organization application.'+
+          '• CreatedRESTfulAPIs withNode.js and Express,facilitating data communicationbetween the front-end'+
+          'and back-end systems.'
+      },
+      {
+          id:2,
+          title:'Frontend Developer',
+          companyName:'Google',
+          city:'Charlotte',
+          state:'NC',
+          startDate:'May 2019',
+          endDate:'Jan 2021',
+          currentlyWorking:false,
+          workSummary:' Designed, developed, and maintained full-stack applications using React and Node.js.'+
+          '• Implemented responsive user interfaces with React, ensuring seamless user experiences across'+
+          'various devices and browsers.'+
+          '• Maintaining the React Native in-house organization application.'+
+          '• CreatedRESTfulAPIs withNode.js and Express,facilitating data communicationbetween the front-end'+
+          'and back-end systems.'
+      }
   ],
-  education: [
-    {
-      id: 1,
-      universityName: "Anna university",
-      startDate: "Aug 2008",
-      endDate: "Jun 2012",
-      degree: "Bachelor of Engineering",
-      major: "Computer Science",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-    },
+  education:[
+      {
+          id:1,
+          universityName:'Western Illinois University',
+          startDate:'Aug 2018',
+          endDate:'Dec:2019',
+          degree:'Master',
+          major:'Computer Science',
+          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+      },
+      {
+          id:2,
+          universityName:'Western Illinois University',
+          startDate:'Aug 2018',
+          endDate:'Dec:2019',
+          degree:'Master',
+          major:'Computer Science',
+          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+      }
   ],
-  skills: [
-    {
-      id: 1,
-      name: "Python",
-      rating: 85,
-    },
-    {
-      id: 2,
-      name: "Php",
-      rating: 96,
-    },
-    {
-      id: 3,
-      name: "React",
-      rating: 75,
-    },
-    {
-      id: 4,
-      name: "Angular",
-      rating: 90,
-    },
-    {
-      id: 4,
-      name: "MysQl",
-      rating: 70,
-    },
-  ],
-};
+  skills:[
+      {
+          id:1,
+          name:'Angular',
+          rating:80,
+      },
+      {
+          id:1,
+          name:'React',
+          rating:100,
+      },
+      {
+          id:1,
+          name:'MySql',
+          rating:80,
+      },
+      {
+          id:1,
+          name:'React Native',
+          rating:100,
+      }
+  ]
+}
