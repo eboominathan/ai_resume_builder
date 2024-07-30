@@ -21,11 +21,11 @@ function Skills() {
     const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext);
    
     useEffect(()=>{
-        resumeInfo&&setSkillsList(resumeInfo?.skills)
+        resumeInfo && setSkillsList(resumeInfo?.skills)
       },[])
    
     const handleChange=(index,name,value)=>{
-        const newEntries=skillsList.slice();
+        const newEntries=skillsList?.slice();
       
         newEntries[index][name]=value;
         setSkillsList(newEntries);
@@ -38,7 +38,7 @@ function Skills() {
         }])
     }
     const RemoveSkills=()=>{
-        setSkillsList(skillsList=>skillsList.slice(0,-1))
+        setSkillsList(skillsList=>skillsList?.slice(0,-1))
     }
 
     const onSave=()=>{
@@ -46,13 +46,12 @@ function Skills() {
         setLoading(true);
         const data={
             data:{
-                skills:skillsList.map(({ id, ...rest }) => rest)
+                skills:skillsList?.map(({ id, ...rest }) => rest)
             }
         }
 
         GlobalApi.UpdateResumeDetail(resumeId,data)
-        .then(resp=>{
-            console.log(resp);
+        .then(resp=>{        
             setLoading(false);
             toast('Details updated !')
         },(error)=>{
@@ -73,7 +72,7 @@ function Skills() {
     <p>Add Your top professional key skills</p>
 
     <div>
-        {skillsList.map((item,index)=>(
+        {skillsList?.map((item,index)=>(
             <div className='flex justify-between p-3 mb-2 border rounded-lg ' key={index}>
                 <div>
                     <label className='text-xs'>Name</label>

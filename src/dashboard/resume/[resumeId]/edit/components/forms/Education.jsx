@@ -25,10 +25,10 @@ function Education() {
   ])
 
   useEffect(()=>{
-    resumeInfo&&setEducationalList(resumeInfo?.education)
+    resumeInfo && setEducationalList(resumeInfo?.education)
   },[])
   const handleChange=(event,index)=>{
-    const newEntries=educationalList.slice();
+    const newEntries=educationalList?.slice();
     const {name,value}=event.target;
     newEntries[index][name]=value;
     setEducationalList(newEntries);
@@ -47,19 +47,19 @@ function Education() {
     ])
   }
   const RemoveEducation=()=>{
-    setEducationalList(educationalList=>educationalList.slice(0,-1))
+    setEducationalList(educationalList=>educationalList?.slice(0,-1))
 
   }
   const onSave=()=>{
     setLoading(true)
     const data={
       data:{
-        education:educationalList.map(({ id, ...rest }) => rest)
+        education:educationalList?.map(({ id, ...rest }) => rest)
       }
     }
 
     GlobalApi.UpdateResumeDetail(params.resumeId,data).then(resp=>{
-      console.log(resp);
+    
       setLoading(false)
       toast('Details updated !')
     },(error)=>{
@@ -81,7 +81,7 @@ function Education() {
     <p>Add Your educational details</p>
 
     <div>
-      {educationalList.map((item,index)=>(
+      {educationalList?.map((item,index)=>(
         <div key={index}>
           <div className='grid grid-cols-2 gap-3 p-3 my-5 border rounded-lg'>
             <div className='col-span-2'>
