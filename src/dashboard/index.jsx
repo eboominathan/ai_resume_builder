@@ -17,6 +17,7 @@ function Dashboard() {
    */
   const GetResumesList =() =>{
    GlobalApi.GetUserResumes(user?.primaryEmailAddress?.emailAddress).then(resp=>{ 
+    console.log(resp);
      setResumeList(resp.data.data); 
   }); 
 }
@@ -26,7 +27,7 @@ function Dashboard() {
     <p>Start Creating AI resume to your next Job role</p>
     <div className='grid grid-cols-2 gap-5 mt-10 md:grid-cols-3 lg:grid-cols-5 '>
       <AddResume/>
-      {resumeList.length>0?resumeList.map((resume,index)=>(
+      {resumeList?.length>0?resumeList.map((resume,index)=>(
         <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
       )):
       [1,2,3,4].map((item,index)=>(
