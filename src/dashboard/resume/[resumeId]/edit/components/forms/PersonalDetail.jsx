@@ -51,7 +51,7 @@ function PersonalDetail({ enableNext }) {
               name="firstName"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.firstName}
+              defaultValue={resumeInfo?.firstName}
             />
           </div>
           <div>
@@ -60,7 +60,7 @@ function PersonalDetail({ enableNext }) {
               name="lastName"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.lastName}
+              defaultValue={resumeInfo?.lastName}
             />
           </div>
           <div className="col-span-2">
@@ -69,7 +69,7 @@ function PersonalDetail({ enableNext }) {
               name="jobTitle"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.jobTitle}
+              defaultValue={resumeInfo?.jobTitle}
             />
           </div>
           <div className="col-span-2">
@@ -78,7 +78,7 @@ function PersonalDetail({ enableNext }) {
               name="address"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.address}
+              defaultValue={resumeInfo?.address}
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ function PersonalDetail({ enableNext }) {
               name="phone"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.phone}
+              defaultValue={resumeInfo?.phone}
             />
           </div>
           <div>
@@ -96,7 +96,7 @@ function PersonalDetail({ enableNext }) {
               name="email"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo.email}
+              defaultValue={resumeInfo?.email}
             />
           </div>
         </div>
