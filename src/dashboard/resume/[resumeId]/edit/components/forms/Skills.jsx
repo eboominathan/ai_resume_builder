@@ -32,10 +32,17 @@ function Skills() {
     }
 
     const AddNewSkills=()=>{
+        if(skillsList?.length>0){
         setSkillsList([...skillsList,{
             name:'',
         rating:0 
         }])
+    }else{
+        setSkillsList([{
+            name:'',
+        rating:0 
+        }])
+    }
     }
     const RemoveSkills=()=>{
         setSkillsList(skillsList=>skillsList?.slice(0,-1))

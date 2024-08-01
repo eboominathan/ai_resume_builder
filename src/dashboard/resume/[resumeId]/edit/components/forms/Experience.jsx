@@ -33,11 +33,13 @@ function experience() {
         const newEntries=experienceList.slice();
         const {name,value}=event.target;
         newEntries[index][name]=value;
-        console.log(newEntries)
+        // console.log(newEntries)
         setExperienceList(newEntries);
     }
 
     const AddNewexperience=()=>{
+
+
     
         setExperienceList([...experienceList,{
             title:'',

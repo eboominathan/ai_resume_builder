@@ -13,16 +13,7 @@ function Education() {
   const [loading,setLoading]=useState(false);
   const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext);
   const params=useParams();
-  const [educationalList,setEducationalList]=useState([
-    {
-      universityName:'',
-      degree:'',
-      major:'',
-      startDate:'',
-      endDate:'',
-      description:''
-    }
-  ])
+  const [educationalList,setEducationalList]=useState([])
 
   useEffect(()=>{
     resumeInfo && setEducationalList(resumeInfo?.education)
@@ -35,16 +26,31 @@ function Education() {
   }
 
   const AddNewEducation=()=>{
-    setEducationalList([...educationalList,
-      {
-        universityName:'',
-        degree:'',
-        major:'',
-        startDate:'',
-        endDate:'',
-        description:''
-      }
-    ])
+
+    if(educationalList?.length>0){
+      setEducationalList([...educationalList,
+        {
+          universityName:'',
+          degree:'',
+          major:'',
+          startDate:'',
+          endDate:'',
+          description:''
+        }
+      ])
+    }else{
+      setEducationalList([
+        {
+          universityName:'',
+          degree:'',
+          major:'',
+          startDate:'',
+          endDate:'',
+          description:''
+        }
+      ])
+    } 
+    
   }
   const RemoveEducation=()=>{
     setEducationalList(educationalList=>educationalList?.slice(0,-1))
@@ -74,7 +80,7 @@ function Education() {
       ...resumeInfo,
       education:educationalList
     })
-  },[educationalList])
+  },[])
   return (
     <div className='p-5 mt-10 border-t-4 rounded-lg shadow-lg border-t-primary'>
     <h2 className='text-lg font-bold'>Education</h2>
