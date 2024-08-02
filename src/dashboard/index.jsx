@@ -1,19 +1,13 @@
 import AddResume from "@/components/AddResume";
 import { useUser } from "@clerk/clerk-react";
 import GlobalApi from "../../service/GlobalApi";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import ResumeCardItem from "@/components/ResumeCardItem";
 import dummy from "@/data/dummy";
 
 function Dashboard() {
   const { user } = useUser();
-  const [resumeList, setResumeList] = useState(dummy);
-
-  useEffect(() => {
-    setResumeList(dummy);
-    RegisterUser();
-    // user && GetResumesList();
-  }, [user]);
+  const [resumeList, setResumeList] = useState();
 
   const loggedUser = {
     firstName: user?.firstName,
@@ -21,19 +15,24 @@ function Dashboard() {
     email: user?.primaryEmailAddress?.emailAddress,
   };
 
-  const RegisterUser = () => {
-    if (!localStorage.getItem("token")) {
-      GlobalApi.RegisterUser(loggedUser).then((resp) => {      
+  const RegisterUser = useCallback(() => {
+    if (!localStorage.getItem("token") && user) {
+      GlobalApi.RegisterUser(loggedUser).then((resp) => {
         localStorage.setItem("token", resp.data.api_token);
       });
     }
-  };
+  }, [user, loggedUser]);
+
+  useEffect(() => {
+    RegisterUser();
+     user && GetResumesList();
+  }, [user, RegisterUser]);
 
   /*
    * Get Resume List
    */
   const GetResumesList = () => {
-    GlobalApi.GetUserResumes(user?.primaryEmailAddress?.emailAddress).then(
+    GlobalApi.GetUserResumes().then(
       (resp) => {
         setResumeList(resp.data.data);
       }

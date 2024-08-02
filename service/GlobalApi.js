@@ -15,7 +15,7 @@ if(localStorage.getItem('token')){
 const RegisterUser=(data)=>axiosClient.post('/users',data);
 const CreateNewResume=(data)=>axiosClient.post('/user-resumes',data);
 
-const GetUserResumes=(userEmail)=>axiosClient.get('/user-resumes?filters[userEmail][$eq]='+userEmail);
+const GetUserResumes=()=>axiosClient.get('/user-resumes');
 
 const UpdateResumeDetail=(id,data)=>axiosClient.put('/user-resumes/'+id,data)
 

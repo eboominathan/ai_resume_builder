@@ -25,13 +25,11 @@ function AddResume() {
   const onCreate = async () => {
     setLoading(true);
     const uuid = uuidv4();
-    const data = {
-      data: {
+    const data = {      
         resumeId: uuid,
         title: resumeTitle,
         userEmail: user?.primaryEmailAddress?.emailAddress,
-        userName: user?.fullName,
-      },
+        userName: user?.fullName       
     };
     GlobalApi.CreateNewResume(data).then(
       (resp) => {
