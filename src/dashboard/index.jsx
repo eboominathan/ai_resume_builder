@@ -3,11 +3,10 @@ import { useUser } from "@clerk/clerk-react";
 import GlobalApi from "../../service/GlobalApi";
 import React, { useEffect, useState, useCallback } from "react";
 import ResumeCardItem from "@/components/ResumeCardItem";
-import dummy from "@/data/dummy";
 
 function Dashboard() {
   const { user } = useUser();
-  const [resumeList, setResumeList] = useState();
+  const [resumeList, setResumeList] = useState([]);
 
   const loggedUser = {
     firstName: user?.firstName,
@@ -21,22 +20,22 @@ function Dashboard() {
         localStorage.setItem("token", resp.data.api_token);
       });
     }
-  }, [user, loggedUser]);
+  }, [user]);
 
   useEffect(() => {
-    RegisterUser();
-     user && GetResumesList();
+    if (user) {
+      RegisterUser();
+      GetResumesList();
+    }
   }, [user, RegisterUser]);
 
   /*
    * Get Resume List
    */
   const GetResumesList = () => {
-    GlobalApi.GetUserResumes().then(
-      (resp) => {
-        setResumeList(resp.data.data);
-      }
-    );
+    GlobalApi.GetUserResumes().then((resp) => {
+      setResumeList(resp.data);
+    });
   };
 
   return (

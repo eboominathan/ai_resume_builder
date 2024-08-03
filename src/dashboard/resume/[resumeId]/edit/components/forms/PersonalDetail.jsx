@@ -24,9 +24,7 @@ function PersonalDetail({ enableNext }) {
   const onSave = (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = {
-      data: formData,
-    };
+    const data = formData;
     GlobalApi.UpdateResumeDetail(params?.resumeId, data).then(
       (res) => {
         toast("Details updated ");
@@ -48,28 +46,28 @@ function PersonalDetail({ enableNext }) {
           <div>
             <label className="text-sm font-bold">First Name</label>
             <Input
-              name="firstName"
+              name="first_name"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo?.firstName}
+              defaultValue={resumeInfo?.first_name}
             />
           </div>
           <div>
             <label className="text-sm font-bold">Last Name</label>
             <Input
-              name="lastName"
+              name="last_name"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo?.lastName}
+              defaultValue={resumeInfo?.last_name}
             />
           </div>
           <div className="col-span-2">
             <label className="text-sm font-bold">Job Title</label>
             <Input
-              name="jobTitle"
+              name="title"
               required
               onChange={handleInputChange}
-              defaultValue={resumeInfo?.jobTitle}
+              defaultValue={resumeInfo?.title}
             />
           </div>
           <div className="col-span-2">

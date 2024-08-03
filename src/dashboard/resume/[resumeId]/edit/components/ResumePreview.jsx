@@ -14,7 +14,7 @@ function ResumePreview() {
     <div
       className="shadow-lg h-full p-14 border-t-[20px]"
       style={{
-        borderColor: resumeInfo?.themeColor,
+        borderColor: resumeInfo?.theme_color,
       }}
     >
       {/* Personal Detail  */}
@@ -22,7 +22,7 @@ function ResumePreview() {
       {/* Summary  */}
       <SummaryPreview resumeInfo={resumeInfo} />
       {/* Professional Experience  */}
-      {resumeInfo?.experience?.length > 0 && (
+      {resumeInfo?.experiences?.length > 0 && (
         <ExperiencePreview resumeInfo={resumeInfo} />
       )}
       {/* Educational  */}

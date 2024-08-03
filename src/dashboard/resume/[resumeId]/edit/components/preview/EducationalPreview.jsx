@@ -17,12 +17,12 @@ function EducationalPreview({ resumeInfo }) {
             className="text-sm font-bold"
             style={{ color: resumeInfo?.themeColor }}
           >
-            {education?.universityName}
+            {education?.university_name}
           </h2>
           <h2 className="flex justify-between text-xs">
             {education?.degree} in {education?.major},
             <span>
-              {education?.startDate} - {education?.endDate}
+              {education?.start_date} - {education?.end_date}
             </span>
           </h2>
           <p className="my-2 text-xs">{education?.description}</p>

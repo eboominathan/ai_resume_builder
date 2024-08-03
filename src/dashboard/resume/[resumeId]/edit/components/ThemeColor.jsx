@@ -43,12 +43,10 @@ function ThemeColor() {
     setSelectedColor(color);
     setResumeInfo({
       ...resumeInfo,
-      themeColor: color,
+      theme_color: color,
     });
-    const data = {
-      data: {
-        themeColor: color,
-      },
+    const data = {    
+      theme_color: color,     
     };
     GlobalApi.UpdateResumeDetail(resumeId, data).then((resp) => {
       console.log(resp);

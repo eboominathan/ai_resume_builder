@@ -10,12 +10,12 @@ import { LoaderCircle } from 'lucide-react'
 
 const formField={
     title:'',
-    companyName:'',
+    company_name:'',
     city:'',
     state:'',
-    startDate:'',
-    endDate:'',
-    workSummary:'',
+    start_date:'',
+    end_date:'',
+    work_summary:'',
 
 }
 function experience() {
@@ -25,7 +25,7 @@ function experience() {
     const [loading,setLoading]=useState(false);
 
     useEffect(()=>{
-        resumeInfo?.experience?.length>0 && setExperienceList(resumeInfo?.experience)
+        resumeInfo?.experiences?.length>0 && setExperienceList(resumeInfo?.experiences)
         
     },[])
 
@@ -43,12 +43,12 @@ function experience() {
     
         setExperienceList([...experienceList,{
             title:'',
-            companyName:'',
+            company_name:'',
             city:'',
             state:'',
-            startDate:'',
-            endDate:'',
-            workSummary:'',
+            start_date:'',
+            end_date:'',
+            work_summary:'',
         }])
     }
 
@@ -75,14 +75,13 @@ function experience() {
     const onSave=()=>{
         setLoading(true)
         const data={
-            data:{
-                experience:experienceList?.map(({ id, ...rest }) => rest)
-            }
+          
+                experiences:experienceList?.map(({ id, ...rest }) => rest)
+           
         }
  
-
-        GlobalApi.UpdateResumeDetail(params?.resumeId,data).then(res=>{
-            console.log(res);
+        console.log(data)
+        GlobalApi.UpdateResumeDetail(params?.resumeId,data).then(res=>{       
             setLoading(false);
             toast('Details updated !')
         },(error)=>{
@@ -108,9 +107,9 @@ function experience() {
                         </div>
                         <div>
                             <label className='text-xs'>Company Name</label>
-                            <Input name="companyName" 
+                            <Input name="company_name" 
                             onChange={(event)=>handleChange(index,event)}
-                            defaultValue={item?.companyName} />
+                            defaultValue={item?.company_name} />
                         </div>
                         <div>
                             <label className='text-xs'>City</label>
@@ -128,23 +127,23 @@ function experience() {
                         <div>
                             <label className='text-xs'>Start Date</label>
                             <Input type="date"  
-                            name="startDate" 
+                            name="start_date" 
                             onChange={(event)=>handleChange(index,event)} 
-                            defaultValue={item?.startDate}/>
+                            defaultValue={item?.start_date}/>
                         </div>
                         <div>
                             <label className='text-xs'>End Date</label>
-                            <Input type="date" name="endDate" 
+                            <Input type="date" name="end_date" 
                             onChange={(event)=>handleChange(index,event)} 
-                            defaultValue={item?.endDate}
+                            defaultValue={item?.end_date}
                             />
                         </div>
                         <div className='col-span-2'>
                            {/* Work Summery  */}
                            <RichTextEditor
                            index={index}
-                           defaultValue={item?.workSummary}
-                           onRichTextEditorChange={(event)=>handleRichTextEditor(event,'workSummary',index)}  />
+                           defaultValue={item?.work_summary}
+                           onRichTextEditorChange={(event)=>handleRichTextEditor(event,'work_summary',index)}  />
                         </div>
                     </div>
                 </div>

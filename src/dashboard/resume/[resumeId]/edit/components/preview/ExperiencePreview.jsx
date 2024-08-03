@@ -5,28 +5,28 @@ function ExperiencePreview({resumeInfo}) {
     <div className='my-6'>
         <h2 className='mb-2 text-sm font-bold text-center'
         style={{
-            color:resumeInfo?.themeColor
+            color:resumeInfo?.theme_color
         }}
         >Professional Experience</h2>
         <hr style={{
-            borderColor:resumeInfo?.themeColor
+            borderColor:resumeInfo?.theme_color
         }} />
 
-        {resumeInfo?.experience?.length>0 && resumeInfo?.experience?.map((experience,index)=>(
+        {resumeInfo?.experiences?.length>0 && resumeInfo?.experiences?.map((experience,index)=>(
             <div key={index} className='my-5'>
                 <h2 className='text-sm font-bold'
                  style={{
-                    color:resumeInfo?.themeColor
+                    color:resumeInfo?.theme_color
                 }}>{experience?.title}</h2>
-                <h2 className='flex justify-between text-xs'>{experience?.companyName}, 
+                <h2 className='flex justify-between text-xs'>{experience?.company_name}, 
                 {experience?.city}, 
                 {experience?.state}
-                <span>{experience?.startDate} To {experience?.currentlyWorking?'Present':experience.endDate} </span>
+                <span>{experience?.start_date} To {experience?.currentlyWorking?'Present':experience.end_date} </span>
                 </h2>
                 {/* <p className='my-2 text-xs'>
                     {experience.workSummery}
                 </p> */}
-                <div className='my-2 text-xs' dangerouslySetInnerHTML={{__html:experience?.workSummary}} />
+                <div className='my-2 text-xs' dangerouslySetInnerHTML={{__html:experience?.work_summary}} />
             </div>
         ))}
     </div>

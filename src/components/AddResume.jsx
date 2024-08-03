@@ -32,11 +32,10 @@ function AddResume() {
         userName: user?.fullName       
     };
     GlobalApi.CreateNewResume(data).then(
-      (resp) => {
-        console.log(resp);
+      (resp) => {       
         if(resp){
             setLoading(false);
-            navigation(`/dashboard/resume/${resp.data.data.documentId}/edit`);
+            navigation(`/dashboard/resume/${resp.data.id}/edit`);
         }
       },
       (error) => {

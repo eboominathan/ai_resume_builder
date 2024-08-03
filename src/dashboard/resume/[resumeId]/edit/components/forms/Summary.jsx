@@ -36,10 +36,8 @@ function Summary({ enableNext  }) {
     e.preventDefault();
 
     setLoading(true);
-    const data = {
-      data: {
-        summary: summary,
-      },
+    const data = {      
+        summary: summary,      
     };
     GlobalApi.UpdateResumeDetail(params?.resumeId, data).then(
       (resp) => {

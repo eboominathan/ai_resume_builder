@@ -30,22 +30,22 @@ function Education() {
     if(educationalList?.length>0){
       setEducationalList([...educationalList,
         {
-          universityName:'',
+          university_name:'',
           degree:'',
           major:'',
-          startDate:'',
-          endDate:'',
+          start_date:'',
+          end_date:'',
           description:''
         }
       ])
     }else{
       setEducationalList([
         {
-          universityName:'',
+          university_name:'',
           degree:'',
           major:'',
-          startDate:'',
-          endDate:'',
+          start_date:'',
+          end_date:'',
           description:''
         }
       ])
@@ -58,10 +58,8 @@ function Education() {
   }
   const onSave=()=>{
     setLoading(true)
-    const data={
-      data:{
-        education:educationalList?.map(({ id, ...rest }) => rest)
-      }
+    const data={     
+        educations:educationalList?.map(({ id, ...rest }) => rest)    
     }
 
     GlobalApi.UpdateResumeDetail(params.resumeId,data).then(resp=>{
@@ -92,9 +90,9 @@ function Education() {
           <div className='grid grid-cols-2 gap-3 p-3 my-5 border rounded-lg'>
             <div className='col-span-2'>
               <label>University Name</label>
-              <Input name="universityName" 
+              <Input name="university_name" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.universityName}
+              defaultValue={item?.university_name}
               />
             </div>
             <div>
@@ -111,15 +109,15 @@ function Education() {
             </div>
             <div>
               <label>Start Date</label>
-              <Input type="date" name="startDate" 
+              <Input type="date" name="start_date" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.startDate} />
+              defaultValue={item?.start_date} />
             </div>
             <div>
               <label>End Date</label>
-              <Input type="date" name="endDate" 
+              <Input type="date" name="end_date" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.endDate} />
+              defaultValue={item?.end_date} />
             </div>
             <div className='col-span-2'>
               <label>Description</label>

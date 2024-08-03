@@ -35,8 +35,8 @@ function ResumeCardItem({resume,refreshData}) {
 
   const onDelete=()=>{
     setLoading(true);
-    GlobalApi.DeleteResumeById(resume.documentId).then(resp=>{
-      console.log(resp);
+    GlobalApi.DeleteResumeById(resume.id).then(resp=>{
+     
       toast('Resume Deleted!');
       refreshData()
       setLoading(false);
@@ -48,7 +48,7 @@ function ResumeCardItem({resume,refreshData}) {
   return (
     
        <div className=''>
-          <Link to={'/dashboard/resume/'+resume.documentId+"/edit"}>
+          <Link to={'/dashboard/resume/'+resume.id+"/edit"}>
         <div className='p-14  bg-gradient-to-b
           from-pink-100 via-purple-200 to-blue-200
         h-[280px] 
