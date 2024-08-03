@@ -92,38 +92,38 @@ function Education() {
               <label>University Name</label>
               <Input name="university_name" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.university_name}
+              defaultValue={item?.university_name} required
               />
             </div>
             <div>
               <label>Degree</label>
               <Input name="degree" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.degree} />
+              defaultValue={item?.degree}  required/>
             </div>
             <div>
               <label>Major</label>
               <Input name="major" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.major} />
+              defaultValue={item?.major}  required/>
             </div>
             <div>
               <label>Start Date</label>
               <Input type="date" name="start_date" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.start_date} />
+              defaultValue={item?.start_date} required />
             </div>
             <div>
               <label>End Date</label>
               <Input type="date" name="end_date" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.end_date} />
+              defaultValue={item?.end_date} required />
             </div>
             <div className='col-span-2'>
               <label>Description</label>
               <Textarea name="description" 
               onChange={(e)=>handleChange(e,index)}
-              defaultValue={item?.description} />
+              defaultValue={item?.description} required />
             </div>
 
           </div>

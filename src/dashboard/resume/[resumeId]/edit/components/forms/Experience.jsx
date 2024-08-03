@@ -102,26 +102,26 @@ function experience() {
                             <label className='text-xs'>Position Title</label>
                             <Input name="title" 
                             onChange={(event)=>handleChange(index,event)}
-                            defaultValue={item?.title}
+                            defaultValue={item?.title} required
                             />
                         </div>
                         <div>
                             <label className='text-xs'>Company Name</label>
                             <Input name="company_name" 
                             onChange={(event)=>handleChange(index,event)}
-                            defaultValue={item?.company_name} />
+                            defaultValue={item?.company_name} required/>
                         </div>
                         <div>
                             <label className='text-xs'>City</label>
                             <Input name="city" 
                             onChange={(event)=>handleChange(index,event)} 
-                            defaultValue={item?.city}/>
+                            defaultValue={item?.city} required/>
                         </div>
                         <div>
                             <label className='text-xs'>State</label>
                             <Input name="state" 
                             onChange={(event)=>handleChange(index,event)}
-                            defaultValue={item?.state}
+                            defaultValue={item?.state} required
                              />
                         </div>
                         <div>
@@ -129,13 +129,13 @@ function experience() {
                             <Input type="date"  
                             name="start_date" 
                             onChange={(event)=>handleChange(index,event)} 
-                            defaultValue={item?.start_date}/>
+                            defaultValue={item?.start_date} required/>
                         </div>
                         <div>
                             <label className='text-xs'>End Date</label>
                             <Input type="date" name="end_date" 
                             onChange={(event)=>handleChange(index,event)} 
-                            defaultValue={item?.end_date}
+                            defaultValue={item?.end_date} required
                             />
                         </div>
                         <div className='col-span-2'>

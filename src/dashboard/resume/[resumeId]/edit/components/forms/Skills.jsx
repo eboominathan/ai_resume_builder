@@ -83,7 +83,7 @@ function Skills() {
                     <label className='text-xs'>Name</label>
                     <Input className="w-full"
                     defaultValue={item.name}
-                    onChange={(e)=>handleChange(index,'name',e.target.value)} />
+                    onChange={(e)=>handleChange(index,'name',e.target.value)} required/>
                 </div>
                 <Rating style={{ maxWidth: 120 }} value={item.rating} 
                 onChange={(v)=>handleChange(index,'rating',v)}/>
