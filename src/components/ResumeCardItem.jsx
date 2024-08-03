@@ -55,7 +55,7 @@ function ResumeCardItem({resume,refreshData}) {
           rounded-t-lg border-t-4
         '
         style={{
-          borderColor:resume?.themeColor
+          borderColor:resume?.theme_color
         }}
         >
               <div className='flex 
@@ -67,7 +67,7 @@ function ResumeCardItem({resume,refreshData}) {
         </Link>
         <div className='flex justify-between p-3 text-white border rounded-b-lg shadow-lg'
          style={{
-          background:resume?.themeColor
+          background:resume?.theme_color
         }}>
           <h2 className='text-sm'>{resume.title}</h2>
          
@@ -77,9 +77,9 @@ function ResumeCardItem({resume,refreshData}) {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
            
-            <DropdownMenuItem  onClick={()=>navigation('/dashboard/resume/'+resume.documentId+"/edit")}>Edit</DropdownMenuItem>
-            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.documentId+"/view")}>View</DropdownMenuItem>
-            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.documentId+"/view")}>Download</DropdownMenuItem>
+            <DropdownMenuItem  onClick={()=>navigation('/dashboard/resume/'+resume.id+"/edit")}>Edit</DropdownMenuItem>
+            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.id+"/view")}>View</DropdownMenuItem>
+            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.id+"/view")}>Download</DropdownMenuItem>
             <DropdownMenuItem onClick={()=>setOpenAlert(true)}>Delete</DropdownMenuItem>
             
           </DropdownMenuContent>
