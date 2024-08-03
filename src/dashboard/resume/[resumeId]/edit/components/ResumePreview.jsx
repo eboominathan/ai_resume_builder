@@ -26,7 +26,7 @@ function ResumePreview() {
         <ExperiencePreview resumeInfo={resumeInfo} />
       )}
       {/* Educational  */}
-      {resumeInfo?.education?.length > 0 && (
+      {resumeInfo?.educations?.length > 0 && (
         <EducationalPreview resumeInfo={resumeInfo} />
       )}
       {/* Skilss  */}

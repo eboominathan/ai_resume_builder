@@ -18,7 +18,7 @@ function ViewResume() {
     },[])
     const GetResumeInfo=()=>{
         GlobalApi.GetResumeById(resumeId).then(resp=>{        
-            setResumeInfo(resp.data.data);
+            setResumeInfo(resp.data);
         })
     }
 
@@ -43,7 +43,7 @@ function ViewResume() {
         data={{
           text: "Hello Everyone, This is my resume please open url to see it",
           url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
-          title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
+          title: resumeInfo?.first_name+" "+resumeInfo?.last_name+" resume",
         }}
         onClick={() => console.log("shared successfully!")}
       > <Button>Share</Button>

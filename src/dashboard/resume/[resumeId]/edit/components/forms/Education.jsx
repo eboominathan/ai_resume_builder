@@ -16,7 +16,7 @@ function Education() {
   const [educationalList,setEducationalList]=useState([])
 
   useEffect(()=>{
-    resumeInfo && setEducationalList(resumeInfo?.education)
+    resumeInfo && setEducationalList(resumeInfo?.educations)
   },[])
   const handleChange=(event,index)=>{
     const newEntries=educationalList?.slice();
